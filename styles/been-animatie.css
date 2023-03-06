@@ -1,0 +1,463 @@
+/* ***** */
+/* Benen */
+/* ***** */
+
+div.broek {
+    position: absolute;
+    left: 4.5em;
+    top: 15em;
+  
+    width: 5em;
+    height: 2em;
+    background-color: var(--colour-broek);
+  
+    clip-path: polygon(
+        0 0, 
+        5em 0, 
+        2.5em 2em, 
+        0 0
+    );
+}
+  
+/* *********** */
+/* Linker been */
+/* *********** */
+  
+div.linker-broek-zak {
+    position: absolute;
+    left: 4em;
+    top: 15em;
+  
+    width: 0.5em;
+    height: 5em;
+    background-color: var(--colour-broekzak);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        0 5em, 
+        0 1em, 
+        0.5em 0
+    );
+}
+  
+div.linker-broek-bovenkant {
+    position: absolute;
+    left: 4em;
+    top: 15em;
+  
+    width: 3em;
+    height: 5em;
+    background-color: var(--colour-broekmouw-en-schoen);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        3em 2em, 
+        0em 5em
+    );
+}
+  
+div.linker-broek-onderkant {
+    position: absolute;
+    left: 4em;
+    top: 17em;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-broek);
+  
+    animation-name: l-broek-onderkant;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+  
+@keyframes l-broek-onderkant {
+    0% {
+        clip-path: polygon(
+            3em 0, 
+            2.5em 6em, 
+            0 3em, 
+            3em 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            3em 0, 
+            2.5em 7em, 
+            0 3em, 
+            3em 0
+        );
+    }
+}
+  
+div.linker-bovenbeen {
+    position: absolute;
+    left: 4em;
+    top: 20em;
+  
+    width: 2.5em;
+    height: 12em;
+    background-color: var(--colour-bovenbeen);
+  
+    animation-name: l-bovenbeen;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+  
+@keyframes l-bovenbeen {
+    0% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            2.5em 0, 
+            0 3em, 
+            2em 10em, 
+            2.5em 0
+        );
+    }
+  
+    100% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            2.5em 0, 
+            0 4em, 
+            2em 12em, 
+            2.5em 0
+        );
+    }
+}
+  
+div.linker-onderbeen {
+    position: absolute;
+    left: 4.5em;
+    top: 23em;
+  
+    width: 2em;
+    height: 10em;
+    background-color: var(--colour-onderbeen);
+  
+    animation-name: l-onderbeen;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+  
+@keyframes l-onderbeen {
+    0% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            0 0, 
+            0.5em 8em, 
+            2em 7em, 
+            0 0
+        );
+    }
+    100% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            0 1em, 
+            0.5em 10em, 
+            2em 9em, 
+            0 1em
+        );
+    }
+}
+  
+div.linker-voet {
+    position: absolute;
+    left: 3.5em;
+    top: 30em;
+  
+    width: 2.5em;
+    height: 3em;
+    background-color: var(--colour-broekmouw-en-schoen);
+  
+    animation-name: l-voet;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+  
+@keyframes l-voet {
+    0% {
+        clip-path: polygon(
+            1em 0, 
+            2.5em 1em, 
+            0 1em, 
+            1em 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            1em 2em, 
+            2.5em 3em, 
+            0 3em, 
+            1em 2em
+        );
+    }
+}
+  
+div.linker-onderkant-voet {
+    position: absolute;
+    left: 3.5em;
+    top: 31em;
+  
+    width: 2.5em;
+    height: 2em;
+  
+    background-color: var(--colour-schoen-onderkant);
+  
+    animation-name: l-onderkant-voet;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+  
+@keyframes l-onderkant-voet {
+    0% {
+        clip-path: polygon(
+            0 0, 
+            2.5em 0,
+            2em 2em, 
+            0.5em 2em, 
+            0 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            0 2em, 
+            2.5em 2em, 
+            2em 2em, 
+            0.5em 2em, 
+            0 2em
+        );
+    }
+}
+  
+/* ************ */
+/* Rechter been */
+/* ************ */
+  
+div.rechter-broek-zak {
+    position: absolute;
+    left: 9.5em;
+    top: 15em;
+  
+    width: 0.5em;
+    height: 5em;
+    background-color: var(--colour-broekzak);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        0 5em, 
+        0 1em, 
+        0.5em 0
+    );
+}
+  
+div.rechter-broek-bovenkant {
+    position: absolute;
+    left: 7em;
+    top: 15em;
+  
+    width: 3em;
+    height: 5em;
+    background-color: var(--colour-broekmouw-en-schoen);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        3em 2em, 
+        0em 5em
+    );
+}
+  
+div.rechter-broek-onderkant {
+    position: absolute;
+    left: 7em;
+    top: 17em;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-broek);
+  
+    animation-name: r-broek-onderkant;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+}
+  
+@keyframes r-broek-onderkant {
+    0% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            3em 0, 
+            2.5em 6em, 
+            0 3em, 
+            3em 0
+        );
+    }
+    100% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            3em 0, 
+            2.5em 7em, 
+            0 3em, 
+            3em 0
+        );
+    }
+}
+  
+div.rechter-bovenbeen {
+    position: absolute;
+    left: 7.5em;
+    top: 20em;
+  
+    width: 2.5em;
+    height: 12em;
+    background-color: var(--colour-bovenbeen);
+  
+    animation-name: r-bovenbeen;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+}
+  
+@keyframes r-bovenbeen {
+    0% {
+        clip-path: polygon(
+            2.5em 0, 
+            0 3em, 
+            2em 10em, 
+            2.5em 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            2.5em 0, 
+            0 4em, 
+            2em 12em, 
+            2.5em 0
+        );
+    }
+}
+  
+div.rechter-onderbeen {
+    position: absolute;
+    left: 7.5em;
+    top: 23em;
+  
+    width: 2em;
+    height: 10em;
+    background-color: var(--colour-onderbeen);
+  
+    animation-name: r-onderbeen;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+}
+  
+@keyframes r-onderbeen {
+    0% {
+        clip-path: polygon(
+            0 0, 
+            0.5em 8em, 
+            2em 7em, 
+            0 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            0 1em, 
+            0.5em 10em, 
+            2em 9em, 
+            0 1em
+        );
+    }
+}
+  
+div.rechter-voet {
+    position: absolute;
+    left: 8em;
+    top: 30em;
+  
+    width: 2.5em;
+    height: 3em;
+    background-color: var(--colour-broekmouw-en-schoen);
+  
+    animation-name: r-voet;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+}
+  
+@keyframes r-voet {
+    0% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            1em 0, 
+            2.5em 1em, 
+            0 1em, 
+            1em 0
+        );
+    }
+    100% {
+        transform: scalex(-1);
+        clip-path: polygon(
+            1em 2em, 
+            2.5em 3em, 
+            0 3em, 
+            1em 2em
+        );
+    }
+}
+  
+div.rechter-onderkant-voet {
+    position: absolute;
+    left: 8em;
+    top: 31em;
+  
+    width: 2.5em;
+    height: 2em;
+  
+    background-color: var(--colour-schoen-onderkant);
+  
+    animation-name: r-onderkant-voet;
+    animation-duration: var(--animation-speed);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    animation-direction: alternate-reverse;
+}
+  
+@keyframes r-onderkant-voet {
+    0% {
+        clip-path: polygon(
+            0 0, 
+            2.5em 0, 
+            2em 2em, 
+            0.5em 2em, 
+            0 0
+        );
+    }
+    100% {
+        clip-path: polygon(
+            0 2em, 
+            2.5em 2em, 
+            2em 2em, 
+            0.5em 2em, 
+            0 2em
+        );
+    }
+}

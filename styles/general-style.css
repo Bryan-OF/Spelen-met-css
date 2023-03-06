@@ -1,0 +1,641 @@
+/* nog toepassen en to-do
+    - onderkant schoen (X)
+    - hele lichaam wobbel animatie ()
+    - benen bij elkaar brengen voor betere loop animatie
+
+    - schoenen naar grid veranderen inplaats van transform: scalex(-1); (X)
+    - achterground gezicht maken (X)
+    - koffer maken en miscchien 3d maken
+    - knoppen maken voor darkmode en alternative kleuren
+  
+    info!
+    - met filter: voor dropshadow in een section pakt die alleen de randjes van het gemaakte figuur
+*/
+
+:root, :root.light {
+    /* Huisstyle Kleuren */
+    --colour-huisstyle-DarkBlue: #0e6975;
+    --colour-huisstyle-Blue: #23929e;
+    --colour-huisstyle-LightBlue: #60bab6;
+  
+    --colour-huisstyle-DarkOrange: #f48660;
+    --colour-huisstyle-Orange: #f2ad68;
+    --colour-huisstyle-Yellow: #f9df6e;
+    /* Huisstyle Kleuren end */
+
+
+    /*  Yourney Inside Colours  */
+    --bg-body: var(--colour-huisstyle-Yellow);
+  
+    --colour-themind-one: var(--colour-huisstyle-DarkBlue);
+    --colour-themind-two: var(--colour-huisstyle-DarkOrange);
+    --colour-themind-three: var(--colour-huisstyle-Blue);
+    --colour-themind-four: var(--colour-huisstyle-Orange);
+    /*  Yourney Inside Colours end  */
+
+
+    /*  Lichaams kleuren  */
+
+    /*  Hoofd kleuren  */
+    --colour-Haar: var(--colour-huisstyle-DarkBlue);
+    --colour-Nek-Links: var(--colour-huisstyle-DarkOrange);
+    --colour-Nek-Rechts: var(--colour-huisstyle-Orange);
+  
+    /*  Torso kleuren  */
+    --colour-Hals: var(--colour-huisstyle-DarkBlue);
+    --colour-Rug: var(--colour-huisstyle-LightBlue);
+    --colour-Rugtas-BovenOnder: var(--colour-huisstyle-DarkOrange);
+    --colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-Orange);
+  
+    /*  armen kleuren  */
+    --colour-mouwboven-en-shadow: var(--colour-huisstyle-Blue);
+    --colour-mouwonder-en-shadow: var(--colour-huisstyle-LightBlue);
+    --colour-arm-buiten: var(--colour-huisstyle-DarkOrange);
+    --colour-arm-binnen: var(--colour-huisstyle-Orange);
+  
+    /*  benen kleuren  */
+    --colour-broek: var(--colour-huisstyle-Blue);
+    --colour-broekmouw-en-schoen: var(--colour-huisstyle-DarkBlue);
+    --colour-broekzak: var(--colour-huisstyle-LightBlue);
+    --colour-schoen-onderkant: var(--colour-huisstyle-Blue);
+  
+    --colour-bovenbeen: var(--colour-huisstyle-Orange);
+    --colour-onderbeen: var(--colour-huisstyle-DarkOrange);
+
+    /*  Lichaams kleuren end  */
+
+
+    /*  animation speed  */
+    --animation-speed: 0.8s;
+    --animation-speed-arms: 0.8s;
+
+    /* button kleuren */
+    --bg-button-A: var(--colour-huisstyle-DarkBlue);
+    --colour-button-tekst-A: var(--colour-huisstyle-Yellow);
+
+    --bg-button-B: var(--colour-huisstyle-Blue);
+    --colour-button-tekst-B: var(--colour-huisstyle-Orange);
+
+    --bg-button-C: var(--colour-huisstyle-LightBlue);
+    --colour-button-tekst-C: var(--colour-huisstyle-DarkOrange);
+    /* button kleuren end */
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        /* Huisstyle Kleuren */
+        --colour-huisstyle-DarkBlue: #0e6975;
+        --colour-huisstyle-Blue: #23929e;
+        --colour-huisstyle-LightBlue: #60bab6;
+      
+        --colour-huisstyle-DarkOrange: #f48660;
+        --colour-huisstyle-Orange: #f2ad68;
+        --colour-huisstyle-Yellow: #f9df6e;
+        /* Huisstyle Kleuren end */
+    
+    
+        /*  Yourney Inside Colours  */
+        --bg-body: var(--colour-huisstyle-DarkBlue);
+      
+        --colour-themind-one: var(--colour-huisstyle-Yellow);
+        --colour-themind-two: var(--colour-huisstyle-Orange);
+        --colour-themind-three: var(--colour-huisstyle-LightBlue);
+        --colour-themind-four: var(--colour-huisstyle-DarkOrange);
+        /*  Yourney Inside Colours end  */
+    
+    
+        /*  Lichaams kleuren  */
+    
+        /*  Hoofd kleuren  */
+        --colour-Haar: var(--colour-huisstyle-Yellow);
+        --colour-Nek-Links: var(--colour-huisstyle-Orange);
+        --colour-Nek-Rechts: var(--colour-huisstyle-DarkOrange);
+      
+        /*  Torso kleuren  */
+        --colour-Hals: var(--colour-huisstyle-LightBlue);
+        --colour-Rug: var(--colour-huisstyle-Blue);
+        --colour-Rugtas-BovenOnder: var(--colour-huisstyle-Orange);
+        --colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-DarkOrange);
+      
+        /*  armen kleuren  */
+        --colour-mouwboven-en-shadow: var(--colour-huisstyle-LightBlue);
+        --colour-mouwonder-en-shadow: var(--colour-huisstyle-Blue);
+        --colour-arm-buiten: var(--colour-huisstyle-Yellow);
+        --colour-arm-binnen: var(--colour-huisstyle-Orange);
+      
+        /*  benen kleuren  */
+        --colour-broek: var(--colour-huisstyle-LightBlue);
+        --colour-broekmouw-en-schoen: var(--colour-huisstyle-Blue);
+        --colour-broekzak: var(--colour-huisstyle-Blue);
+        --colour-schoen-onderkant: var(--colour-huisstyle-LightBlue);
+      
+        --colour-bovenbeen: var(--colour-huisstyle-Yellow);
+        --colour-onderbeen: var(--colour-huisstyle-Orange);
+    
+        /*  Lichaams kleuren end  */
+    
+    
+        /*  animation speed  */
+        --animation-speed: 0.8s;
+        --animation-speed-arms: 0.8s;
+    
+        /* button kleuren */
+        --bg-button-A: var(--colour-huisstyle-Yellow);
+        --colour-button-tekst-A: var(--colour-huisstyle-DarkBlue);
+
+        --bg-button-B: var(--colour-huisstyle-Orange);
+        --colour-button-tekst-B: var(--colour-huisstyle-Blue);
+
+        --bg-button-C: var(--colour-huisstyle-DarkOrange);
+        --colour-button-tekst-C: var(--colour-huisstyle-LightBlue);
+        /* button kleuren end */
+    }
+}
+
+:root.dark {
+    /* Huisstyle Kleuren */
+    --colour-huisstyle-DarkBlue: #0e6975;
+    --colour-huisstyle-Blue: #23929e;
+    --colour-huisstyle-LightBlue: #60bab6;
+  
+    --colour-huisstyle-DarkOrange: #f48660;
+    --colour-huisstyle-Orange: #f2ad68;
+    --colour-huisstyle-Yellow: #f9df6e;
+    /* Huisstyle Kleuren end */
+
+
+    /*  Yourney Inside Colours  */
+    --bg-body: var(--colour-huisstyle-DarkBlue);
+  
+    --colour-themind-one: var(--colour-huisstyle-Yellow);
+    --colour-themind-two: var(--colour-huisstyle-Orange);
+    --colour-themind-three: var(--colour-huisstyle-LightBlue);
+    --colour-themind-four: var(--colour-huisstyle-DarkOrange);
+    /*  Yourney Inside Colours end  */
+
+
+    /*  Lichaams kleuren  */
+
+    /*  Hoofd kleuren  */
+    --colour-Haar: var(--colour-huisstyle-Yellow);
+    --colour-Nek-Links: var(--colour-huisstyle-Orange);
+    --colour-Nek-Rechts: var(--colour-huisstyle-DarkOrange);
+  
+    /*  Torso kleuren  */
+    --colour-Hals: var(--colour-huisstyle-LightBlue);
+    --colour-Rug: var(--colour-huisstyle-Blue);
+    --colour-Rugtas-BovenOnder: var(--colour-huisstyle-Orange);
+    --colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-DarkOrange);
+  
+    /*  armen kleuren  */
+    --colour-mouwboven-en-shadow: var(--colour-huisstyle-LightBlue);
+    --colour-mouwonder-en-shadow: var(--colour-huisstyle-Blue);
+    --colour-arm-buiten: var(--colour-huisstyle-Yellow);
+    --colour-arm-binnen: var(--colour-huisstyle-Orange);
+  
+    /*  benen kleuren  */
+    --colour-broek: var(--colour-huisstyle-LightBlue);
+    --colour-broekmouw-en-schoen: var(--colour-huisstyle-Blue);
+    --colour-broekzak: var(--colour-huisstyle-Blue);
+    --colour-schoen-onderkant: var(--colour-huisstyle-LightBlue);
+  
+    --colour-bovenbeen: var(--colour-huisstyle-Yellow);
+    --colour-onderbeen: var(--colour-huisstyle-Orange);
+
+    /*  Lichaams kleuren end  */
+
+
+    /*  animation speed  */
+    --animation-speed: 0.8s;
+    --animation-speed-arms: 0.8s;
+
+    /* button kleuren */
+    --bg-button-A: var(--colour-huisstyle-Yellow);
+    --colour-button-tekst-A: var(--colour-huisstyle-DarkBlue);
+
+    --bg-button-B: var(--colour-huisstyle-Orange);
+    --colour-button-tekst-B: var(--colour-huisstyle-Blue);
+
+    --bg-button-C: var(--colour-huisstyle-DarkOrange);
+    --colour-button-tekst-C: var(--colour-huisstyle-LightBlue);
+    /* button kleuren end */
+}
+
+body {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    min-height: 100dvh;
+    background-color: var(--bg-body);
+  
+    margin: 0;
+}
+  
+/* **************** */
+/* The minds on top */
+/* **************** */
+  
+body > ul {
+    position: absolute;
+  
+    display: grid;
+    place-items: center;
+    place-content: center;
+  
+    scale: 1.1;
+  
+    transform-style: preserve-3d;
+    perspective: 5em;
+
+}
+
+body > ul > li.the-mind {
+    --duration: 20s;
+    --amount: 12;
+    position: absolute;
+    /*   top: 0; */
+  
+    list-style: none;
+  
+    width: 40em;
+    height: 40em;
+    clip-path: path(
+        "m463.36,640h176.18V0H0v640h165.61s23.35-79.04-41.83-205c-74-143,21-238,21-238,0,0,55-65,156-62,0,0,90-9,154,67,0,0,36,26,32,126,0,0-3,30,53,104,0,0,38,41-29,60,0,0-13,3-15,13,0,0-2.82,65-32.41,135Z"
+    );
+  
+    /*   transform: translatez(-80em); */
+  
+    animation-name: wooi;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes wooi {
+    0% {
+        transform: translatez(-80em);
+    }
+    98% {
+        opacity: 1;
+    }
+    100% {
+        transform: translatez(0em);
+        opacity: 0;
+    }
+}
+  
+.one {
+    background-color: var(--colour-themind-one);
+    /*   z-index: 100; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -1);
+}
+
+.two {
+    /*   scale: 85%; */
+    background-color: var(--colour-themind-two);
+    /*   z-index: 99; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -2);
+}
+  
+.three {
+    /*   scale: 70%; */
+    background-color: var(--colour-themind-three);
+    /*   z-index: 98; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -3);
+}
+  
+.four {
+    /*   scale: 55%; */
+    background-color: var(--colour-themind-four);
+    /*   z-index: 97; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -4);
+}
+  
+.five {
+    /*   scale: 40%; */
+    background-color: var(--colour-themind-one);
+    /*   z-index: 96; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -5);
+}
+  
+.six {
+    /*   scale: 30%; */
+    background-color: var(--colour-themind-two);
+    /*   z-index: 95; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -6);
+}
+  
+.seven {
+    /*   scale: 23%; */
+    background-color: var(--colour-themind-three);
+    /*   z-index: 94; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -7);
+}
+  
+.eight {
+    /*   scale: 17%; */
+    background-color: var(--colour-themind-four);
+    /*   z-index: 93; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -8);
+}
+  
+.nine {
+    /*   scale: 12.5%; */
+    background-color: var(--colour-themind-one);
+    /*   z-index: 92; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -9);
+}
+  
+.ten {
+    /*   scale: 9%; */
+    background-color: var(--colour-themind-two);
+    /*   z-index: 91; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -10);
+}
+  
+.eleven {
+    /*   scale: 6.5%; */
+    background-color: var(--colour-themind-three);
+    /*   z-index: 90; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -11);
+}
+  
+.tweelf {
+    /*   scale: 4.7%; */
+    background-color: var(--colour-themind-four);
+    /*   z-index: 89; */
+    animation-delay: calc((var(--duration) / var(--amount)) * -12);
+}
+  
+section:nth-of-type(1) {
+    position: relative;
+    top: 7.5em;
+  
+    width: 14em;
+    height: 33em;
+    scale: 60%;
+}
+
+section:nth-of-type(2) {
+    position: relative;
+    display: flex;
+    top: 8em;
+
+    gap: 2em;
+}
+
+section:nth-of-type(2) button {
+    width: 5em;
+    height: 5em;
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+    clip-path: polygon(
+        20% 0, 
+        80% 0, 
+        100% 20%, 
+        100% 80%, 
+        80% 100%, 
+        20% 100%, 
+        0 80%, 
+        0 20%
+    );
+    /* made with https://bennettfeely.com/clippy/ */
+}
+
+section:nth-of-type(2) button:nth-of-type(1) {
+    background-color: var(--bg-button-A);
+    color: var(--colour-button-tekst-A);
+}
+
+section:nth-of-type(2) button:nth-of-type(2) {
+    background-color: var(--bg-button-B);
+    color: var(--colour-button-tekst-B);
+}
+
+section:nth-of-type(2) button:nth-of-type(3) {
+    background-color: var(--bg-button-C);
+    color: var(--colour-button-tekst-C);
+}
+
+section:nth-of-type(2) button span {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.3em;
+}
+
+/* ***** */
+/* Hoofd */
+/* ***** */
+
+div.haar {
+    position: absolute;
+    left: 5em;
+    top: 0;
+  
+    z-index: 100;
+  
+    width: 4em;
+    height: 4em;
+    background-color: var(--colour-Haar);
+  
+    clip-path: polygon(
+        0.5em 0,
+        3.5em 0,
+        4em 0.5em,
+        4em 3em,
+        2em 4em,
+        0 3em,
+        0 0.5em,
+        0.5em 0
+    );
+}
+  
+div.nek.links {
+    position: absolute;
+    left: 5.5em;
+    top: 3em;
+  
+    width: 1.5em;
+    height: 2em;
+    background-color: var(--colour-Nek-Links);
+  
+    clip-path: polygon(
+        0 0, 
+        1.5em 1em, 
+        1.5em 2em, 
+        0.5em 2em, 
+        0 0
+    );
+}
+
+div.nek.rechts {
+    position: absolute;
+    left: 7em;
+    top: 3em;
+  
+    width: 1.5em;
+    height: 2em;
+    background-color: var(--colour-Nek-Rechts);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0 0, 
+        1.5em 1em, 
+        1.5em 2em, 
+        0.5em 2em, 
+        0 0
+    );
+}
+
+div.hals {
+    position: absolute;
+    left: 5em;
+    top: 5em;
+  
+    width: 4em;
+    height: 0.5em;
+    background-color: var(--colour-Hals);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        3.5em 0, 
+        4em 0.5em, 
+        0 0.5em, 
+        0.5em 0
+    );
+}
+  
+div.rug {
+    position: absolute;
+    left: 5em;
+    top: 5.5em;
+  
+    width: 4em;
+    aspect-ratio: 4/1;
+    background-color: var(--colour-Rug);
+}
+  
+/* ****** */
+/* Rugtas */
+/* ****** */
+  
+div.rugtas-boven {
+    position: absolute;
+    left: 5em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 4em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    clip-path: polygon(
+        0 0, 
+        4em 0, 
+        2em 7em, 
+        0 0
+    );
+}
+  
+div.rugtas-links {
+    position: absolute;
+    left: 4em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    clip-path: polygon(
+        1em 0, 
+        3em 7em, 
+        0 7em, 
+        1em 0
+    );
+}
+  
+div.rugtas-rechts {
+    position: absolute;
+    left: 7em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        1em 0, 
+        3em 7em,
+        0 7em, 
+        1em 0
+    );
+}
+
+div.rugtas-onder {
+    position: absolute;
+    left: 4.5em;
+    top: 13.5em;
+
+    z-index: 100;
+  
+    width: 6em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    clip-path: polygon(
+        2.5em 0, 
+        5em 1.5em, 
+        0 1.5em, 
+        2.5em 0
+    );
+}
+
+div.rugtas-onder-links {
+    position: absolute;
+    left: 4em;
+    top: 13.5em;
+  
+    z-index: 100;
+
+    width: 3em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    clip-path: polygon(
+        0 0, 
+        3em 0, 
+        0.5em 1.5em, 
+        0 0
+    );
+}
+
+div.rugtas-onder-rechts {
+    position: absolute;
+    left: 7em;
+    top: 13.5em;
+
+    z-index: 100;
+  
+    width: 3em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0 0, 
+        3em 0, 
+        0.5em 1.5em, 
+        0 0
+    );
+}
