@@ -1,0 +1,457 @@
+/* ****** */
+/* BASICS */
+/* ****** */
+@font-face {
+	font-family: 'Saira';
+	font-weight:300..750;
+	font-stretch:70%;
+	font-style: normal;
+
+	src: url("../../../../fonts/Saira-Variable.woff2") format('woff2');
+	font-display: fallback;
+}
+
+*, ::before, ::after {
+	box-sizing: border-box;
+	font-family: 'Saira', sans-serif;
+}
+
+
+
+
+
+/* **** */
+/* BODY */
+/* **** */
+
+html {
+	overflow:hidden;
+}
+
+body {
+	height: 100dvh;
+	margin: 0; 
+	overflow:hidden;
+
+	display: grid;
+	place-items: center;
+	place-content: center;
+	
+	background-color: var(--bg-body);
+}
+ 
+
+
+
+
+/* **************** */
+/* The minds on top */
+/* **************** */
+  
+body > ul {
+	--perspective:10em;
+	--duration: 30s;
+	--amount: 16;
+
+	position: absolute;
+	left:50%; /* safari */
+	top:50%; /* safari */
+
+	width: 40em;
+	aspect-ratio: 1;
+	margin:0;
+	padding:0;
+	translate:-50% -50%;
+
+	list-style: none;
+
+	display: grid;
+	place-items: center;
+	place-content: center;
+
+	transform-style: preserve-3d;
+	perspective: var(--perspective);
+}
+
+body > ul > li {
+	position: absolute;
+	inset:0;
+
+	background-color: var(--mind-color, var(--colour-themind-one));
+	clip-path: path(
+		"m463.36,640h176.18V0H0v640h165.61s23.35-79.04-41.83-205c-74-143,21-238,21-238,0,0,55-65,156-62,0,0,90-9,154,67,0,0,36,26,32,126,0,0-3,30,53,104,0,0,38,41-29,60,0,0-13,3-15,13,0,0-2.82,65-32.41,135Z"
+	);
+
+	animation-name: wieuw;
+	animation-duration: var(--duration);
+	animation-delay: calc((var(--duration) / var(--amount)) * (var(--index) + .75) * -1);
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+	body > ul > li {
+		animation-play-state: running;
+	}
+}
+  
+@keyframes wieuw {
+    0% {
+        transform: translateZ( calc( var(--perspective) * -8 ) );
+				opacity: 0;
+    }
+		25%, 90% {
+        opacity: .98;
+    }
+    100% {
+        transform: translateZ( var(--perspective) );
+        opacity: 0;
+    }
+}
+
+li:nth-of-type(1) {--index:0;}
+li:nth-of-type(2) {--index:1;}
+li:nth-of-type(3) {--index:2;}
+li:nth-of-type(4) {--index:3;}
+li:nth-of-type(5) {--index:4;}
+li:nth-of-type(6) {--index:5;}
+li:nth-of-type(7) {--index:6;}
+li:nth-of-type(8) {--index:7;}
+li:nth-of-type(9) {--index:8;}
+li:nth-of-type(10) {--index:9;}
+li:nth-of-type(11) {--index:10;}
+li:nth-of-type(12) {--index:11;}
+li:nth-of-type(13) {--index:12;}
+li:nth-of-type(14) {--index:13;}
+li:nth-of-type(15) {--index:14;}
+li:nth-of-type(16) {--index:15;}
+
+li:nth-of-type(4n + 1) {
+	--mind-color: var(--colour-themind-two);
+}
+
+li:nth-of-type(4n + 2) {
+	--mind-color: var(--colour-themind-three);
+}
+
+li:nth-of-type(4n + 3) {
+	--mind-color: var(--colour-themind-four);
+}
+
+
+
+
+
+/* ****** */
+/* BUTTON */
+/* ****** */
+
+form {
+	position: absolute;
+	bottom: 2em;
+	left:0;
+	right:0;
+
+	display: flex;
+	justify-content:center;
+	gap: 2em;
+}
+
+form button {
+	width: 5rem;
+	height: 5rem;
+
+	display:grid;
+	grid-template-columns:min-content;
+	place-content:center;
+	text-align:center;
+
+	clip-path: polygon(
+			var(--lu, 20%) 0, 
+			calc(100% - var(--ru, 20%)) 0, 
+			100% var(--ru, 20%), 
+			100% calc(100% - var(--rl, 20%)), 
+			calc(100% - var(--rl, 20%)) 100%, 
+			var(--ll, 20%) 100%, 
+			0 calc(100% - var(--ll, 20%)), 
+			0 var(--lu, 20%),
+			var(--lu, 20%) 0
+	);
+	/* made with https://bennettfeely.com/clippy/ */
+
+	appearance:none;
+	background-color: var(--bg-button);
+	border:none;
+	color: var(--colour-button);
+	
+	font-size:175%;
+	font-variation-settings: "wght" var(--wgth, 300);
+	line-height:.9em;
+}
+
+form button[aria-pressed="false"]:hover,
+form button[aria-pressed="false"]:focus {
+	cursor:pointer;
+	--wgth:750;
+}
+  
+form button[aria-pressed="true"] {
+	--lu:0%;
+	--ru:0%;
+	--rl:0%;
+	--ll:0%;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+	form button {
+		transition:all .2s, transform .1s;
+	}
+
+	form button[aria-pressed="false"]:hover,
+	form button[aria-pressed="false"]:focus {
+		line-height:.75em;
+	}
+
+	form button[aria-pressed="false"]:active {
+		translate: 0 2px;
+		transition:transform .05s;
+	}
+}
+
+
+
+
+/* ******** */
+/* MANNETJE */
+/* ******** */
+
+section {
+	/*  animation speed  */
+	--animation-speed: 0.8s;
+	--animation-speed-arms: 0.8s;
+
+	position: relative;
+
+	width: 14em;
+	height: 33em;
+	translate:0 7.5em;
+	scale: .5;
+}
+
+
+
+/* ***** */
+/* Hoofd */
+/* ***** */
+
+div.haar {
+    position: absolute;
+    left: 5em;
+    top: 0;
+  
+    z-index: 100;
+  
+    width: 4em;
+    height: 4em;
+    background-color: var(--colour-Haar);
+  
+    clip-path: polygon(
+        0.5em 0,
+        3.5em 0,
+        4em 0.5em,
+        4em 3em,
+        2em 4em,
+        0 3em,
+        0 0.5em,
+        0.5em 0
+    );
+}
+  
+div.nek.links {
+    position: absolute;
+    left: 5.5em;
+    top: 3em;
+  
+    width: 1.5em;
+    height: 2em;
+    background-color: var(--colour-Nek-Links);
+  
+    clip-path: polygon(
+        0 0, 
+        1.5em 1em, 
+        1.5em 2em, 
+        0.5em 2em, 
+        0 0
+    );
+}
+
+div.nek.rechts {
+    position: absolute;
+    left: 7em;
+    top: 3em;
+  
+    width: 1.5em;
+    height: 2em;
+    background-color: var(--colour-Nek-Rechts);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0 0, 
+        1.5em 1em, 
+        1.5em 2em, 
+        0.5em 2em, 
+        0 0
+    );
+}
+
+div.hals {
+    position: absolute;
+    left: 5em;
+    top: 5em;
+  
+    width: 4em;
+    height: 0.5em;
+    background-color: var(--colour-Hals);
+  
+    clip-path: polygon(
+        0.5em 0, 
+        3.5em 0, 
+        4em 0.5em, 
+        0 0.5em, 
+        0.5em 0
+    );
+}
+  
+div.rug {
+    position: absolute;
+    left: 5em;
+    top: 5.5em;
+  
+    width: 4em;
+    aspect-ratio: 4/1;
+    background-color: var(--colour-Rug);
+}
+  
+/* ****** */
+/* Rugtas */
+/* ****** */
+  
+div.rugtas-boven {
+    position: absolute;
+    left: 5em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 4em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    clip-path: polygon(
+        0 0, 
+        4em 0, 
+        2em 7em, 
+        0 0
+    );
+}
+  
+div.rugtas-links {
+    position: absolute;
+    left: 4em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    clip-path: polygon(
+        1em 0, 
+        3em 7em, 
+        0 7em, 
+        1em 0
+    );
+}
+  
+div.rugtas-rechts {
+    position: absolute;
+    left: 7em;
+    top: 6.5em;
+  
+    z-index: 100;
+  
+    width: 3em;
+    height: 7em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        1em 0, 
+        3em 7em,
+        0 7em, 
+        1em 0
+    );
+}
+
+div.rugtas-onder {
+    position: absolute;
+    left: 4.5em;
+    top: 13.5em;
+
+    z-index: 100;
+  
+    width: 6em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-MiddenZijkanten);
+  
+    clip-path: polygon(
+        2.5em 0, 
+        5em 1.5em, 
+        0 1.5em, 
+        2.5em 0
+    );
+}
+
+div.rugtas-onder-links {
+    position: absolute;
+    left: 4em;
+    top: 13.5em;
+  
+    z-index: 100;
+
+    width: 3em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    clip-path: polygon(
+        0 0, 
+        3em 0, 
+        0.5em 1.5em, 
+        0 0
+    );
+}
+
+div.rugtas-onder-rechts {
+    position: absolute;
+    left: 7em;
+    top: 13.5em;
+
+    z-index: 100;
+  
+    width: 3em;
+    height: 1.5em;
+    background-color: var(--colour-Rugtas-BovenOnder);
+  
+    transform: scalex(-1);
+  
+    clip-path: polygon(
+        0 0, 
+        3em 0, 
+        0.5em 1.5em, 
+        0 0
+    );
+}
