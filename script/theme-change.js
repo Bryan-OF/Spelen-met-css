@@ -1,28 +1,22 @@
-// function colourchange() {
-//     var element = document.body;
-//     element.classList.toggle("theme-A");
-// }
+const buttons = document.querySelectorAll("button");
 
-const darkButton = document.querySelector("#dark");
-const lightButton = document.querySelector("#light");
-const systemButton = document.querySelector("#system");
+const setColorMode = (event) => {
+	const newColorModeButton = event.currentTarget;
 
+	console.log(newColorModeButton.ariaPressed = "false");
 
-darkButton.addEventListener("click", turnDark);
-lightButton.addEventListener("click", turnLight);
-systemButton.addEventListener("click", turnSystem);
+	if ( newColorModeButton.ariaPressed == "false" ) {
+		// swap buttons
+		const curColorModeButton = document.querySelector('[aria-pressed="true"]');
+		newColorModeButton.ariaPressed = "true";
+		curColorModeButton.ariaPressed = "false";
 
-function turnDark() {
-    document.documentElement.classList.add("dark");
-    document.documentElement.classList.remove("light");
+		// set new color mode
+		const newColorMode = newColorModeButton.id;
+		document.documentElement.dataset.colorMode = newColorModeButton.id;
+	}
 }
 
-function turnLight() {
-    document.documentElement.classList.add("light");
-    document.documentElement.classList.remove("dark");
-}
-
-function turnSystem() {
-    document.documentElement.classList.remove("light");
-    document.documentElement.classList.remove("dark");
-}
+buttons.forEach( button => {
+	button.onclick = setColorMode;
+});

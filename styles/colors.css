@@ -1,0 +1,180 @@
+/* ****** */
+/* COLORS */
+/* ****** */
+
+:root,
+:root[data-color-mode="light"] {
+	/* Huisstyle Kleuren */
+	--colour-huisstyle-DarkBlue: #0e6975;
+	--colour-huisstyle-Blue: #23929e;
+	--colour-huisstyle-LightBlue: #60bab6;
+
+	--colour-huisstyle-DarkOrange: #f48660;
+	--colour-huisstyle-Orange: #f2ad68;
+	--colour-huisstyle-Yellow: #f9df6e;
+	/* Huisstyle Kleuren end */
+
+
+	/*  Yourney Inside Colours  */
+	--bg-body: var(--colour-huisstyle-Yellow);
+
+	--colour-themind-one: var(--colour-huisstyle-DarkBlue);
+	--colour-themind-two: var(--colour-huisstyle-DarkOrange);
+	--colour-themind-three: var(--colour-huisstyle-Blue);
+	--colour-themind-four: var(--colour-huisstyle-Orange);
+	/*  Yourney Inside Colours end  */
+
+
+	/*  Lichaams kleuren  */
+
+	/*  Hoofd kleuren  */
+	--colour-Haar: var(--colour-huisstyle-DarkBlue);
+	--colour-Nek-Links: var(--colour-huisstyle-DarkOrange);
+	--colour-Nek-Rechts: var(--colour-huisstyle-Orange);
+
+	/*  Torso kleuren  */
+	--colour-Hals: var(--colour-huisstyle-DarkBlue);
+	--colour-Rug: var(--colour-huisstyle-LightBlue);
+	--colour-Rugtas-BovenOnder: var(--colour-huisstyle-DarkOrange);
+	--colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-Orange);
+
+	/*  armen kleuren  */
+	--colour-mouwboven-en-shadow: var(--colour-huisstyle-Blue);
+	--colour-mouwonder-en-shadow: var(--colour-huisstyle-LightBlue);
+	--colour-arm-buiten: var(--colour-huisstyle-DarkOrange);
+	--colour-arm-binnen: var(--colour-huisstyle-Orange);
+
+	/*  benen kleuren  */
+	--colour-broek: var(--colour-huisstyle-Blue);
+	--colour-broekmouw-en-schoen: var(--colour-huisstyle-DarkBlue);
+	--colour-broekzak: var(--colour-huisstyle-LightBlue);
+	--colour-schoen-onderkant: var(--colour-huisstyle-Blue);
+
+	--colour-bovenbeen: var(--colour-huisstyle-Orange);
+	--colour-onderbeen: var(--colour-huisstyle-DarkOrange);
+
+	/*  Lichaams kleuren end  */	
+
+	/* button kleuren */
+	--bg-button:var(--colour-huisstyle-DarkBlue);
+	--colour-button:var(--colour-huisstyle-Yellow);
+	/* button kleuren end */
+}
+
+@media (prefers-color-scheme:dark) {
+	:root {
+		/* Huisstyle Kleuren */
+		--colour-huisstyle-DarkBlue: #0e6975;
+		--colour-huisstyle-Blue: #23929e;
+		--colour-huisstyle-LightBlue: #60bab6;
+	
+		--colour-huisstyle-DarkOrange: #f48660;
+		--colour-huisstyle-Orange: #f2ad68;
+		--colour-huisstyle-Yellow: #f9df6e;
+		/* Huisstyle Kleuren end */
+
+
+		/*  Yourney Inside Colours  */
+		--bg-body: var(--colour-huisstyle-DarkBlue);
+	
+		--colour-themind-one: var(--colour-huisstyle-Yellow);
+		--colour-themind-two: var(--colour-huisstyle-Orange);
+		--colour-themind-three: var(--colour-huisstyle-LightBlue);
+		--colour-themind-four: var(--colour-huisstyle-DarkOrange);
+		/*  Yourney Inside Colours end  */
+
+
+		/*  Lichaams kleuren  */
+
+		/*  Hoofd kleuren  */
+		--colour-Haar: var(--colour-huisstyle-Yellow);
+		--colour-Nek-Links: var(--colour-huisstyle-Orange);
+		--colour-Nek-Rechts: var(--colour-huisstyle-DarkOrange);
+	
+		/*  Torso kleuren  */
+		--colour-Hals: var(--colour-huisstyle-LightBlue);
+		--colour-Rug: var(--colour-huisstyle-Blue);
+		--colour-Rugtas-BovenOnder: var(--colour-huisstyle-Orange);
+		--colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-DarkOrange);
+	
+		/*  armen kleuren  */
+		--colour-mouwboven-en-shadow: var(--colour-huisstyle-LightBlue);
+		--colour-mouwonder-en-shadow: var(--colour-huisstyle-Blue);
+		--colour-arm-buiten: var(--colour-huisstyle-Yellow);
+		--colour-arm-binnen: var(--colour-huisstyle-Orange);
+	
+		/*  benen kleuren  */
+		--colour-broek: var(--colour-huisstyle-LightBlue);
+		--colour-broekmouw-en-schoen: var(--colour-huisstyle-Blue);
+		--colour-broekzak: var(--colour-huisstyle-Blue);
+		--colour-schoen-onderkant: var(--colour-huisstyle-LightBlue);
+	
+		--colour-bovenbeen: var(--colour-huisstyle-Yellow);
+		--colour-onderbeen: var(--colour-huisstyle-Orange);
+
+		/*  Lichaams kleuren end  */
+
+		/* --bg-button-A: */
+		--bg-button:var(--colour-huisstyle-Yellow);
+		--colour-button:var(--colour-huisstyle-DarkBlue);
+		/* button kleuren end */
+	}
+}
+
+:root[data-color-mode="dark"] {
+	/* Huisstyle Kleuren */
+	--colour-huisstyle-DarkBlue: #0e6975;
+	--colour-huisstyle-Blue: #23929e;
+	--colour-huisstyle-LightBlue: #60bab6;
+
+	--colour-huisstyle-DarkOrange: #f48660;
+	--colour-huisstyle-Orange: #f2ad68;
+	--colour-huisstyle-Yellow: #f9df6e;
+	/* Huisstyle Kleuren end */
+
+
+	/*  Yourney Inside Colours  */
+	--bg-body: var(--colour-huisstyle-DarkBlue);
+
+	--colour-themind-one: var(--colour-huisstyle-Yellow);
+	--colour-themind-two: var(--colour-huisstyle-Orange);
+	--colour-themind-three: var(--colour-huisstyle-LightBlue);
+	--colour-themind-four: var(--colour-huisstyle-DarkOrange);
+	/*  Yourney Inside Colours end  */
+
+
+	/*  Lichaams kleuren  */
+
+	/*  Hoofd kleuren  */
+	--colour-Haar: var(--colour-huisstyle-Yellow);
+	--colour-Nek-Links: var(--colour-huisstyle-Orange);
+	--colour-Nek-Rechts: var(--colour-huisstyle-DarkOrange);
+
+	/*  Torso kleuren  */
+	--colour-Hals: var(--colour-huisstyle-LightBlue);
+	--colour-Rug: var(--colour-huisstyle-Blue);
+	--colour-Rugtas-BovenOnder: var(--colour-huisstyle-Orange);
+	--colour-Rugtas-MiddenZijkanten: var(--colour-huisstyle-DarkOrange);
+
+	/*  armen kleuren  */
+	--colour-mouwboven-en-shadow: var(--colour-huisstyle-LightBlue);
+	--colour-mouwonder-en-shadow: var(--colour-huisstyle-Blue);
+	--colour-arm-buiten: var(--colour-huisstyle-Yellow);
+	--colour-arm-binnen: var(--colour-huisstyle-Orange);
+
+	/*  benen kleuren  */
+	--colour-broek: var(--colour-huisstyle-LightBlue);
+	--colour-broekmouw-en-schoen: var(--colour-huisstyle-Blue);
+	--colour-broekzak: var(--colour-huisstyle-Blue);
+	--colour-schoen-onderkant: var(--colour-huisstyle-LightBlue);
+
+	--colour-bovenbeen: var(--colour-huisstyle-Yellow);
+	--colour-onderbeen: var(--colour-huisstyle-Orange);
+
+	/*  Lichaams kleuren end  */
+
+	/* --bg-button-A: */
+	--bg-button:var(--colour-huisstyle-Yellow);
+	--colour-button:var(--colour-huisstyle-DarkBlue);
+	/* button kleuren end */
+}
